@@ -1,6 +1,6 @@
 # logseq-plugin-open-page-in-logseq
 
-[Logseq](https://logseq.com/) plugin that creates a .url file for the current page. When opening the file it will open the page in Logseq.
+[Logseq](https://logseq.com/) plugin that creates a `.url` file for the current page. When opening the file it will open the page in Logseq.
 
 NOTE: only tested on macOS so far.
 
@@ -8,4 +8,6 @@ NOTE: only tested on macOS so far.
 
 ---
 
-- Invoke via the toolbar button
+Invoke via the toolbar button:
+
+<img src="./toolbar.png" height="84">
