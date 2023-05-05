@@ -9,18 +9,18 @@ export const makeUrl = (graphName: string, pageName: string) => {
 };
 
 
-export const makeWeblocContent = (url: string) => {
-	const content = `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>${url}</string>
-</dict>
-</plist>
-`;
-	return content;
-};
+// export const makeWeblocContent = (url: string) => {
+// 	const content = `<?xml version="1.0" encoding="UTF-8"?>
+// <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+// <plist version="1.0">
+// <dict>
+// 	<key>URL</key>
+// 	<string>${url}</string>
+// </dict>
+// </plist>
+// `;
+// 	return content;
+// };
 
 
 // also supported by windows

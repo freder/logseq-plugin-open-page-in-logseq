@@ -6,7 +6,7 @@ import { makeToolbarIcon, makeUrl, makeUrlContent } from './utils';
 
 
 const main = async () => {
-	// toolbar icon
+	// add toolbar icon
 	logseq.App.registerUIItem(
 		'toolbar',
 		{
@@ -15,7 +15,6 @@ const main = async () => {
 		}
 	);
 
-	// using a command fails with: "DOMException: Document is not focused"
 	// logseq.App.registerCommandPalette(
 	// 	{
 	// 		key: 'create-url-file',
@@ -25,11 +24,11 @@ const main = async () => {
 	// 	copy
 	// );
 
-	// wait for the toolbar icon to be rendered
+	// HACK: wait for the toolbar icon to be rendered
 	setTimeout(() => {
-		console.log(window.parent.document);
-		const elem = window.parent.document.getElementById('copy-webloc');
-		console.log(elem);
+		// we need a direct user interaction for this to work
+		// otherwise the command fails with "DOMException: Document is not focused"
+		const elem = window.parent.document.getElementById('create-url-file');
 		if (elem) {
 			elem.addEventListener('click', copy);
 		}
@@ -63,7 +62,6 @@ const copy = async () => {
 	const blob = new Blob([content]/* , { type: mimeType } */);
 
 	// const item = new ClipboardItem({ [blob.type]: blob });
-	// console.log(item);
 	// navigator.clipboard.write([item]);
 
 	const name = slugify(page.name, { lower: true });
@@ -75,8 +73,8 @@ const copy = async () => {
 	saveAs(file);
 };
 
-const model = {
-	invokeCommand: copy,
-};
+// const model = {
+// 	invokeCommand: copy,
+// };
 
-logseq.ready(model, main).catch(console.error);
+logseq.ready(/* model,  */main).catch(console.error);
