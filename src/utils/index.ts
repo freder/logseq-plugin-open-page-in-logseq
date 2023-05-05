@@ -35,7 +35,7 @@ export const makeToolbarIcon = (cmdLabel: string) => {
 	return `
 		<div style="display: inline;">
 			<button
-				id="copy-webloc"
+				id="create-url-file"
 				__data-on-click="invokeCommand"
 				title="${cmdLabel}"
 				class="button icon inline"

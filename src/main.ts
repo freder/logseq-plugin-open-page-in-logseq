@@ -10,16 +10,16 @@ const main = async () => {
 	logseq.App.registerUIItem(
 		'toolbar',
 		{
-			key: 'copy-webloc',
-			template: `${makeToolbarIcon('Copy .webloc')}\n`,
+			key: 'create-url-file',
+			template: `${makeToolbarIcon('Create .url file pointing to current page')}\n`,
 		}
 	);
 
 	// using a command fails with: "DOMException: Document is not focused"
 	// logseq.App.registerCommandPalette(
 	// 	{
-	// 		key: 'copy-webloc',
-	// 		label: 'Copy .webloc file pointing to current page',
+	// 		key: 'create-url-file',
+	// 		label: 'Create .url file pointing to current page',
 	// 		// keybinding: keyBinding,
 	// 	},
 	// 	copy
