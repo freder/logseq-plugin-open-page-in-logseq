@@ -25,14 +25,19 @@ const main = async () => {
 	// );
 
 	// HACK: wait for the toolbar icon to be rendered
-	setTimeout(() => {
+	let elem = window.parent.document.getElementById('create-url-file');
+	if (elem) {
 		// we need a direct user interaction for this to work
 		// otherwise the command fails with "DOMException: Document is not focused"
-		const elem = window.parent.document.getElementById('create-url-file');
-		if (elem) {
-			elem.addEventListener('click', copy);
-		}
-	}, 1000);
+		elem.addEventListener('click', copy);
+	} else {
+		setTimeout(() => {
+			elem = window.parent.document.getElementById('create-url-file');
+			if (elem) {
+				elem.addEventListener('click', copy);
+			}
+		}, 1000);
+	}
 };
 
 const copy = async () => {
