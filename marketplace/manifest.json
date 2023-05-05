@@ -1,0 +1,8 @@
+{
+	"title": ".webloc shortcut",
+	"description": "Creates a .webloc file for the current page that can be pasted into a local directory",
+	"author": "freder",
+	"repo": "freder/logseq-plugin-webloc",
+	"icon": "icon.png", // TODO: update icon
+	"effect": true
+}

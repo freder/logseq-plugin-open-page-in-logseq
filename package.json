@@ -1,0 +1,31 @@
+{
+  "name": "logseq-plugin-webloc",
+  "version": "0.0.0",
+  "main": "dist/index.html",
+  "logseq": {
+    "id": "logseq-plugin-webloc",
+    "title": ".webloc shortcut",
+    "icon": "marketplace/icon.png"
+  },
+  "scripts": {
+    "lint": "eslint ./src",
+    "check": "tsc --noEmit",
+    "dev": "vite",
+    "watch": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.14",
+    "file-saver": "^2.0.5",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-functional": "^5.0.6",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.0"
+  }
+}
