@@ -21,8 +21,8 @@ module.exports = {
 	},
 	plugins: [
 		// 'import',
-		'react',
-		'react-hooks',
+		// 'react',
+		// 'react-hooks',
 		// 'jsx-a11y',
 		'@typescript-eslint',
 		// 'jest',
@@ -34,7 +34,7 @@ module.exports = {
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
-		'plugin:react/recommended',
+		// 'plugin:react/recommended',
 		// 'plugin:jsx-a11y/recommended',
 		// 'plugin:import/recommended',
 		// 'plugin:jest/recommended',
@@ -85,8 +85,8 @@ module.exports = {
 		'functional/immutable-data': 'off',
 		'functional/no-try-statement': 'off',
 
-		'react-hooks/rules-of-hooks': 'error',
-		'react-hooks/exhaustive-deps': 'warn',
+		// 'react-hooks/rules-of-hooks': 'error',
+		// 'react-hooks/exhaustive-deps': 'warn',
 
 		'@typescript-eslint/no-unused-vars': 'warn',
 		'@typescript-eslint/no-empty-function': 'off',

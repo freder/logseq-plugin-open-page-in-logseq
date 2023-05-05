@@ -3,7 +3,7 @@
 name: Releases
 
 env:
-  PLUGIN_NAME: logseq-plugin-webloc
+  PLUGIN_NAME: logseq-plugin-open-page-in-logseq
 
 # Controls when the action will run.
 on:

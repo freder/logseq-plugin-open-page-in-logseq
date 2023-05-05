@@ -1,10 +1,10 @@
 {
-  "name": "logseq-plugin-webloc",
-  "version": "0.0.0",
+  "name": "logseq-plugin-open-page-in-logseq",
+  "version": "0.1.0",
   "main": "dist/index.html",
   "logseq": {
-    "id": "logseq-plugin-webloc",
-    "title": ".webloc shortcut",
+    "id": "logseq-plugin-open-page-in-logseq",
+    "title": "Open page in Logseq",
     "icon": "marketplace/icon.png"
   },
   "scripts": {

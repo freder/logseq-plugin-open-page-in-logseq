@@ -1,8 +1,8 @@
 {
-	"title": ".webloc shortcut",
-	"description": "Creates a .webloc file for the current page that can be pasted into a local directory",
+	"title": "Open page in Logseq",
+	"description": "Creates a .url file for the current page that – when opened – opens the the page in Logseq.",
 	"author": "freder",
-	"repo": "freder/logseq-plugin-webloc",
-	"icon": "icon.png", // TODO: update icon
+	"repo": "freder/logseq-plugin-open-page-in-logseq",
+	"icon": "icon.png",
 	"effect": true
 }
