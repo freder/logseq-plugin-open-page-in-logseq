@@ -24,15 +24,27 @@ const main = async () => {
 	// 	copy
 	// );
 
-	// HACK: wait for the toolbar icon to be rendered
-	setTimeout(() => {
+	const initButton = () => {
 		// we need a direct user interaction for this to work
 		// otherwise the command fails with "DOMException: Document is not focused"
 		const elem = window.parent.document.getElementById('create-url-file');
 		if (elem) {
 			elem.addEventListener('click', copy);
+			return true;
 		}
-	}, 1000);
+		return false;
+	};
+
+	// HACK: wait for the toolbar icon to be rendered
+	let timeout = 0;
+	const tryInitButton = () => {
+		const success = initButton();
+		if (!success) {
+			timeout = 100;
+			setTimeout(tryInitButton, timeout);
+		}
+	};
+	tryInitButton();
 };
 
 const copy = async () => {
