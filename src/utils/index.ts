@@ -1,4 +1,13 @@
+import { toolbarButtonId } from '../constants';
+
+
+export const getToolbarButton = () => {
+	return window.parent.document.getElementById(toolbarButtonId);
+};
+
+
 export const makeUrl = (graphName: string, pageName: string) => {
+	// https://docs.logseq.com/?ref=blog.logseq.com#/page/Logseq%20Protocol
 	// logseq://graph/ios?page=document%20automation%20tool
 	const url = `logseq://graph/${graphName}?page=${encodeURIComponent(pageName)}`;
 
@@ -36,10 +45,10 @@ export const makeToolbarIcon = (cmdLabel: string) => {
 	return `
 		<div style="display: inline;">
 			<button
-				id="create-url-file"
+				id="${toolbarButtonId}"
 				title="${cmdLabel}"
 				class="button icon inline"
-				style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;"
+				style="width:32px;height:32px;display:none;align-items:center;justify-content:center;"
 			>
 				<span class="ui__icon" style="position:relative;left:1px;">
 					<svg

@@ -1,7 +1,7 @@
 import '@logseq/libs';
 import { saveAs } from 'file-saver';
 import slugify from 'slugify';
-import { makeToolbarIcon, makeUrl, makeUrlContent } from './utils';
+import { getToolbarButton, makeToolbarIcon, makeUrl, makeUrlContent } from './utils';
 // import type { SimpleCommandKeybinding } from '@logseq/libs/dist/LSPlugin';
 
 
@@ -15,6 +15,29 @@ const main = async () => {
 		}
 	);
 
+	const disableButton = () => {
+		const elem = getToolbarButton();
+		if (!elem) { return; }
+		elem.style.display = 'none';
+	};
+	const enableButton = () => {
+		const elem = getToolbarButton();
+		if (!elem) { return; }
+		elem.style.display = 'flex';
+	};
+
+	logseq.App.onRouteChanged((event) => {
+		const elem = getToolbarButton();
+		if (!elem) {
+			return;
+		}
+		if (event.template === '/') { // journals
+			disableButton();
+		} else {
+			enableButton();
+		}
+	});
+
 	// logseq.App.registerCommandPalette(
 	// 	{
 	// 		key: 'create-url-file',
@@ -24,12 +47,20 @@ const main = async () => {
 	// 	copy
 	// );
 
-	const initButton = () => {
+	const initButton = async () => {
 		// we need a direct user interaction for this to work
 		// otherwise the command fails with "DOMException: Document is not focused"
-		const elem = window.parent.document.getElementById('create-url-file');
+		const elem = getToolbarButton();
 		if (elem) {
 			elem.addEventListener('click', copy);
+
+			const page = await logseq.Editor.getCurrentPage();
+			if (!page) {
+				disableButton();
+			} else {
+				enableButton();
+			}
+
 			return true;
 		}
 		return false;
@@ -37,8 +68,8 @@ const main = async () => {
 
 	// HACK: wait for the toolbar icon to be rendered
 	let timeout = 0;
-	const tryInitButton = () => {
-		const success = initButton();
+	const tryInitButton = async () => {
+		const success = await initButton();
 		if (!success) {
 			timeout = 100;
 			setTimeout(tryInitButton, timeout);
