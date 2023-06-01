@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.x.x
+## 0.1.3
 ### Changed
 - Hide toolbar button on pages that are not supported
 
